@@ -1,0 +1,78 @@
+.nav.navbar {
+    background-color: #CC1414;
+}
+
+.navbar-inverse {
+    background-color: #F8F8F8;
+    border-color: #E7E7E7;
+    padding: 5%;
+}
+
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+.sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+
+.Navegation{
+    margin-left:450px;
+    font-size: 18px;
+    white-space:nowrap;
+    padding: 6px 8px 6px 16px;
+    display: inline-block;
+}
+
+.main {
+    margin-left: 400px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+    font-size: 25px;
+    /*text-align:center;*/
+    color: #f1f1f1;
+    display:flex;
+
+}
+.descripcion{
+    margin-left: 450px; /* Same as the width of the sidenav */
+    font-size: 15px; /* Increased text to enable scrolling */
+    padding: 0px 5px;
+    font-size: 18px;
+   /* text-align:center;*/
+    color: #f1f1f1;
+    display:flex;
+    white-space:normal;
+    font-family: "Times New Roman", Times, serif;
+}
+.col-md-6 {
+    padding-top: -100px;
+    position: relative;
+    width: 400px;
+    height: 400px;
+    display: block;
+    margin-left: 300px;
+    margin-top: 10px;
+    
+  }

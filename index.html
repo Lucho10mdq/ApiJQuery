@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Football</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" href="Css/styles.css">
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="Js/funciones.js"></script>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    <header>
+        <div class="navbar-header"></div>
+          <div class="nav.navbar"></div>
+            <nav class="navbar navbar-inverse">
+                <div class="main">
+                    <p class="greeting-caption"></p>
+                </div>
+                <div class="descripcion">
+                        <p>Number of match day:</p> <span class="greeting-numberOfMatchdays"></span>
+                 </div>          
+                 <div class="descripcion">
+                        <p>Number of Games:</p> <span class="greeting-numberOfGames"></span>
+                 </div>  
+                 <div class="descripcion">
+                        <p>Number of Teams:</p> <span class="greeting-numberOfTeams"></span>
+                 </div>            
+            </nav>
+         </div>   
+        </div>    
+    </header> 
+    <div class="col-md-6 ">
+            <img src="Imagens/rusia-2018.jpg" alt="image" class="img-responsive">
+    </div>
+    <div class="Navegation">
+            <button  onclick="teams()">Teams</button> 
+            <button  onClick="Fixture()">Fixture</button> 
+            <button  onClick="LeagueTable()">League Table</button>   
+    </div> 
+    <div class="form-group">
+        <div class="col-md-6">
+        <input  value="" onchange="BuscarEquipo()"  id="team" name="team" placeholder="Search Team" class="form-control input-md" type="text">
+          
+        </div>
+      </div>
+    <div class="element">
+        <div id="info" class="col-md-4">
+            <div id="info" class="caption">
+
+            </div>
+        </div>   
+    </div>   
+    <div class="col-md-6">
+            <table id="tables" class="table-bordered">
+               <tr>
+                   
+               </tr>
+            </table>  
+    </div> 
+    <div class="element">
+        <div id="fix" class="col-md-4">
+           
+        </div>  
+</div>     
+
+</body>
+<script>
+  $(document).ready(function() {
+    $.ajax({
+        headers: { 'X-Auth-Token': 'a15af96f0dc846f5a756fd7eea616120' },
+        url:"http://api.football-data.org/v1/competitions/467", 
+    }).then(function(data) {
+        $('.greeting-caption').append(data.caption);
+       $('.greeting-numberOfMatchdays').append(data.numberOfMatchdays);
+       $('.greeting-numberOfTeams').append(data.numberOfTeams);
+       $('.greeting-numberOfGames').append(data.numberOfGames);     
+    });
+});
+
+</script>
+</html>
